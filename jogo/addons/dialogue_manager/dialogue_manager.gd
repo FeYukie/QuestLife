@@ -84,9 +84,6 @@ func _ready() -> void:
 		Engine.register_singleton("DialogueManager", self)
 
 	ignore_missing_state_values = DMSettings.get_setting(DMSettings.IGNORE_MISSING_STATE_VALUES, false)
-	
-	DialogueManager.get_current_scene = func():
-		return get node("/root/SceneManager").scene
 
 ## Step through lines and run any mutations until we either hit some dialogue or the end of the conversation
 func get_next_dialogue_line(resource: DialogueResource, key: String = "", extra_game_states: Array = [], mutation_behaviour: DMConstants.MutationBehaviour = DMConstants.MutationBehaviour.Wait) -> DialogueLine:
