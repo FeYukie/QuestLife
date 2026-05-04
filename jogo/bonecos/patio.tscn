@@ -2153,6 +2153,31 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "Pressione C"
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=189999079]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=823949475]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="TituloFase" type="Label" parent="CanvasLayer/Control" unique_id=2104347516]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.5
+offset_right = 48.5
+offset_bottom = 45.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.96862745)
+theme_override_font_sizes/font_size = 32
+text = "Fase 1"
+
 [editable path="vitima"]
 [editable path="bully1"]
 [editable path="bully2"]
