@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://rkgboxgbho6l"]
+
+[ext_resource type="Script" uid="uid://bjh3bgl3biwyp" path="res://bonecos/vitima.gd" id="1_74x36"]
+[ext_resource type="Resource" uid="uid://cmw653oyhxonr" path="res://dialogue/dialogue1.dialogue" id="2_q03y0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j1h26"]
+radius = 5.0
+height = 26.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_74x36"]
+load_path = "res://.godot/imported/TPF_Character_2a.png-f684e0401d5b559e955f9c1673a0ed7c.ctex"
+
+[sub_resource type="GDScript" id="GDScript_74x36"]
+script/source = "extends Area2D
+
+@export var dialogue_resource: DialogueResource
+@export var dialogue_start: String = \"start\"
+
+func _on_body_entered(body):
+	if body.has_method(\"jogador\"):
+		body.pode_interagir = true
+		body.npc_proximo = self
+
+func _on_body_exited(body):
+	if body.has_method(\"jogador\"):
+		body.pode_interagir = false
+		body.npc_proximo = null
+		
+func iniciar_dialogo():
+	DialogueManager.show_dialogue_balloon(dialogue_resource, dialogue_start)
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_74x36"]
+size = Vector2(24.5, 39)
+
+[node name="vitima" type="CharacterBody2D" unique_id=1957441867]
+script = ExtResource("1_74x36")
+
+[node name="Animation" type="AnimationPlayer" parent="." unique_id=74300959]
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=779873815]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_j1h26")
+
+[node name="Texture" type="Sprite2D" parent="." unique_id=1038733724]
+position = Vector2(0, -16)
+texture = SubResource("CompressedTexture2D_74x36")
+hframes = 12
+vframes = 7
+frame = 1
+
+[node name="Actionable" type="Area2D" parent="." unique_id=1836018293]
+script = SubResource("GDScript_74x36")
+dialogue_resource = ExtResource("2_q03y0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable" unique_id=1722440272]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_74x36")
+
+[connection signal="body_entered" from="Actionable" to="." method="_on_actionable_body_entered"]
+[connection signal="body_exited" from="Actionable" to="." method="_on_actionable_body_exited"]

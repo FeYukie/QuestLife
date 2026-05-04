@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://doduga3lcx32a"]
+
+[ext_resource type="Script" uid="uid://bjh3bgl3biwyp" path="res://bonecos/vitima.gd" id="1_720nk"]
+[ext_resource type="Texture2D" uid="uid://d0b1phlwnx0b5" path="res://Tiny Pixel Fantasy - Base Pack/Characters/TPF_Character_1.png" id="1_j1h26"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j1h26"]
+radius = 5.0
+height = 26.0
+
+[node name="vitima" type="CharacterBody2D" unique_id=1957441867]
+script = ExtResource("1_720nk")
+
+[node name="Animation" type="AnimationPlayer" parent="." unique_id=74300959]
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=779873815]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_j1h26")
+
+[node name="Texture" type="Sprite2D" parent="." unique_id=1038733724]
+position = Vector2(0, -16)
+texture = ExtResource("1_j1h26")
+hframes = 12
+vframes = 7
