@@ -7,6 +7,7 @@ var is_chatting = false
 # Carregue o recurso de diálogo aqui para facilitar o uso
 @export var dialogo_recurso: DialogueResource = preload("res://dialogue/dialogue1.dialogue")
 @export var dialogo_titulo: String = "start"
+@onready var aviso_chat: Label = $AvisoChat # Pega a referência do texto
 
 func iniciar_dialogo():
 	if not is_chatting:
@@ -30,8 +31,10 @@ func _on_actionable_body_entered(body: Node2D) -> void:
 		body.pode_interagir = true
 		body.npc_proximo = self
 		print("Jogador detectado!")
+		aviso_chat.visible = true
 
 func _on_actionable_body_exited(body: Node2D) -> void:
 	if body.has_method("jogador"):
 		body.pode_interagir = false
 		body.npc_proximo = null
+		aviso_chat.visible = false # Esconde o aviso quando o chat começa[cite: 2]

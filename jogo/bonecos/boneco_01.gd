@@ -9,7 +9,6 @@ var npc_proximo = null
 
 func _process(delta):
 	if pode_interagir and Input.is_action_just_pressed("chat"):
-		show_hint("Pressione C para conversar")
 		if npc_proximo:
 			iniciar_dialogo(npc_proximo)
 

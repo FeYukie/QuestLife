@@ -31,7 +31,7 @@ func iniciar_dialogo():
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_74x36"]
-size = Vector2(24.5, 39)
+size = Vector2(19.625, 50.25)
 
 [node name="vitima" type="CharacterBody2D" unique_id=1957441867]
 script = ExtResource("1_74x36")
@@ -54,7 +54,7 @@ script = SubResource("GDScript_74x36")
 dialogue_resource = ExtResource("2_q03y0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable" unique_id=1722440272]
-position = Vector2(0, -16)
+position = Vector2(0, -14)
 shape = SubResource("RectangleShape2D_74x36")
 
 [connection signal="body_entered" from="Actionable" to="." method="_on_actionable_body_entered"]

@@ -2116,9 +2116,6 @@ tile_set = SubResource("TileSet_wk6qb")
 [node name="jogador" parent="." unique_id=1796086270 instance=ExtResource("1_4h07l")]
 position = Vector2(201, 24)
 script = ExtResource("3_5oe02")
-velocidade_maxima = null
-aceleracao = null
-atrito = null
 
 [node name="Camera2D" type="Camera2D" parent="jogador" unique_id=1326119576]
 position = Vector2(-201, -25)
@@ -2138,11 +2135,23 @@ position = Vector2(-762, -219)
 [node name="bully1" parent="." unique_id=748131935 instance=ExtResource("10_bv75j")]
 position = Vector2(-769, -489)
 
+[node name="AvisoChat" type="Label" parent="bully1" unique_id=1214977917]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Pressione C"
+
 [node name="bully2" parent="." unique_id=104389777 instance=ExtResource("10_bv75j")]
 position = Vector2(-742, -489)
 
 [node name="Texture" parent="bully2" index="2" unique_id=1038733724]
 texture = ExtResource("11_y4vdc")
+
+[node name="AvisoChat" type="Label" parent="bully2" unique_id=1831823150]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Pressione C"
 
 [editable path="vitima"]
 [editable path="bully1"]

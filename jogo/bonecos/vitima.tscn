@@ -21,3 +21,9 @@ position = Vector2(0, -16)
 texture = ExtResource("1_j1h26")
 hframes = 12
 vframes = 7
+
+[node name="AvisoChat" type="Label" parent="." unique_id=1109519249]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Pressione C"
