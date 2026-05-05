@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://73ka26kpp806"]
+
+[ext_resource type="Script" uid="uid://dth3qtcn7axdm" path="res://title_screen/selecao_personagem.gd" id="1_3epah"]
+[ext_resource type="Texture2D" uid="uid://c63775c0hd5t5" path="res://tiles/jogador/menina.png" id="2_m45f1"]
+
+[node name="SelecaoPersonagem" type="Node2D" unique_id=15677400]
+script = ExtResource("1_3epah")
+
+[node name="Label" type="Label" parent="." unique_id=131114005]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1131202712]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="HBoxContainer" unique_id=46959579]
+layout_mode = 2
+icon = ExtResource("2_m45f1")
+
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer" unique_id=1532721238]
+layout_mode = 2
