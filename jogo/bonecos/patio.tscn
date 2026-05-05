@@ -11,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://doduga3lcx32a" path="res://bonecos/vitima.tscn" id="9_1yqo5"]
 [ext_resource type="PackedScene" uid="uid://rkgboxgbho6l" path="res://bonecos/bully.tscn" id="10_bv75j"]
 [ext_resource type="Texture2D" uid="uid://dctvlu4o7g1f5" path="res://Tiny Pixel Fantasy - Base Pack/Characters/TPF_Character_3.png" id="11_y4vdc"]
+[ext_resource type="PackedScene" uid="uid://ioaywlx4lxge" path="res://title_screen/pause_menu.tscn" id="9_1yqo5"]
+[ext_resource type="PackedScene" uid="uid://b385f41aw6g87" path="res://title_screen/botaoTestePerdaDeVida.tscn" id="9_bv75j"]
+[ext_resource type="PackedScene" uid="uid://8b02ptlsbam2" path="res://title_screen/label_morte.tscn" id="10_bv75j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ubc3v"]
 texture = ExtResource("2_5oe02")
