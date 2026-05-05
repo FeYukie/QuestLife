@@ -37,3 +37,42 @@ func _physics_process(delta):
 	# 4. EXECUTAR O MOVIMENTO
 	move_and_slide()
 	
+# --- SISTEMA DE VIDAS ---
+var vidas = 3
+
+func _ready():
+	add_to_group("player")
+	# Supondo que o masculino comece no frame 0 e o feminino no frame 8 (segunda linha)
+	if Global.genero_escolhido == "feminino":
+		$Sprite2D.frame = 8
+	else:
+		$Sprite2D.frame = 0
+
+# --- FUNÇÕES DE LÓGICA DO JOGO ---
+
+func perder_vida():
+	vidas -= 1
+	if vidas <= 0:
+		morrer()
+
+func morrer():
+	# 1. Buscamos o nó pelo nome exato que está na sua imagem
+	# Usar o grupo ainda é a forma mais segura de evitar erro de caminho
+	var aviso = get_tree().get_first_node_in_group("ui_morte")
+	
+	if aviso:
+		# Se o grupo estiver no nó 'LabelMorte', mostramos ele
+		aviso.show() 
+		# Se o nó 'Mensag' for o que tem o texto, garantimos que ele apareça
+		if aviso.has_node("Mensag"):
+			aviso.get_node("Mensag").show()
+	
+	# 2. Trava o mundo para dar destaque à mensagem
+	get_tree().paused = true
+	
+	# 3. Espera os 2 segundos (importante: o 'true' final permite rodar na pausa)
+	await get_tree().create_timer(2.0, true).timeout
+	
+	# 4. Destrava e volta para o menu principal
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://title_screen/title_screen.tscn")
