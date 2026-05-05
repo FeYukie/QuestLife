@@ -2093,6 +2093,8 @@ tile_map_data = PackedByteArray("AADG/+z/AQAPAAIAAADG/+3/AQAPAAMAAADG/0MAAQAQAAI
 tile_set = SubResource("TileSet_q0pe0")
 collision_visibility_mode = 1
 
+[node name="PauseMenu" parent="CanvasLayer" unique_id=465537518 instance=ExtResource("9_1yqo5")]
+
 [node name="plantas" type="TileMapLayer" parent="." unique_id=1617764271]
 tile_map_data = PackedByteArray("AADF/9H/BQAGAAEAAADF/9P/BQAGAAEAAADF/9X/BQACAAIAAADF/9b/BQAFAAEAAADF/9r/BQAGAAEAAADK/9L/BQAGAAEAAADM/9P/BQAGAAEAAADM/9T/BQAGAAEAAADL/9X/BQAGAAEAAADK/9b/BQACAAIAAADL/9b/BQACAAIAAADL/9j/BQAGAAEAAADM/9n/BQAGAAEAAADL/9L/BQACAAIAAADF/9z/BQACAAIAAADF/93/BQACAAIAAADF/9//BQAFAAEAAADG/+P/BQACAAIAAADG/+T/BQACAAIAAADN/93/BQACAAIAAADM/93/BQACAAIAAADM/97/BQACAAIAAADM/9//BQAFAAEAAADM/+D/BQAFAAEAAADL/+D/BQACAAIAAADL/+H/BQAFAAEAAADL/+X/BQACAAIAAADK/93/BQAGAAEAAADL/97/BQAFAAEAAADL/9//BQAFAAEAAADM/+H/BQAGAAEAAADL/+L/BQAFAAEAAADL/+P/BQAFAAEAAADF/+D/BQAFAAEAAADG/+X/BQAFAAEAAADE/+X/BQAFAAEAAADE/+b/BQAFAAEAAADF/+b/BQAFAAEAAADF/+L/BQAFAAEAAADM/+T/BQAGAAEAAADF/+n/BQAGAAEAAADM/+j/BQACAAIAAADL/+r/BQAGAAEAAADL/+v/BQACAAIAAADK/+f/BQAGAAEAAADL/+f/BQAGAAEAAADM/+X/BQAGAAEAAADF/97/BQAGAAEAAADF/+r/BQAGAAEAAADG/+H/BQAGAAEAAADF/+H/BQAGAAEAAADN/9v/BQAGAAEAAADM/9z/BQAGAAEAAADK/9r/BQAGAAEAAADK/9H/BQAGAAEAAADE/+T/BQACAAIAAADL/+j/BQACAAIAAADM/+n/BQACAAIAAADF/+3/BQACAAIAAADF//D/BQACAAIAAAA=")
 tile_set = SubResource("TileSet_xidkm")
@@ -2138,6 +2140,10 @@ limit_bottom = 1120
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 
+[node name="Node2D" parent="." unique_id=865320978 instance=ExtResource("9_bv75j")]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=666225396]
+
 [node name="Collision" type="CollisionShape2D" parent="jogador" unique_id=53226653]
 
 [node name="vitima" parent="." unique_id=1957441867 instance=ExtResource("9_1yqo5")]
@@ -2165,6 +2171,8 @@ offset_bottom = 23.0
 text = "Pressione C"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=189999079]
+
+[node name="LabelMorte" parent="CanvasLayer2" unique_id=76596968 instance=ExtResource("10_bv75j")]
 
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=823949475]
 layout_mode = 3
